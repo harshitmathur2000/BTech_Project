@@ -5,7 +5,7 @@ function HomePage() {
         <body>
             <div class="container">
                 <div class="button-container">
-                    <Link to="/buy" className="button">GANDU</Link>
+                    <Link to="/buy" className="button">Buy</Link>
                     <Link to="/sell" className="button">Sell</Link>
                     <Link to="/request" className="button">Request</Link>
                     <Link to="/view-request" className="button">View Request</Link>
