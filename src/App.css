@@ -1,33 +1,120 @@
-
 body {
-  background-color: #cfe0e8; /* Updated background color */
+  background: linear-gradient(0deg, #a883f9, #71f8f8);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100vh;
   margin: 0;
 }
 
+.container {
+  display: flex;
+  flex-direction: row; /* Set the direction to row to have text on the left and buttons on the right */
+  align-items: center;
+  justify-content: space-between; /* Distribute space between text and buttons */
+  width: 100%; /* Adjust the container width as needed */
+}
+
+.header {
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.967); /* Adjust the font size for the header text */
+  height: 100vh;
+  width: 100%; 
+  justify-content: center;/* Add margin to separate it from buttons */
+  background-image: url('./img/bgimage.jpg'); /* Replace with the correct path to your image */
+  background-size: cover; /* Adjust background size as needed */
+  background-position: center;
+  text-align: center;
+}
+.header .header-text{
+  margin-top: 20vh;
+  justify-self: center;
+  font-size: 450%;
+}
 .button-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
   text-align: center;
+  height: 100%; /* Make sure the container takes up the full height */
+  width: 50%;
 }
 
+
+
 .button {
+  width: 20vw;
+  height: 10vh;
   padding: 20px 40px;
-  margin: 10px;
+  margin: 10px ;
+  
   border: none;
   border-radius: 10px;
   font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  background-color: #674d3c; /* Updated button background color */
-  color: white; /* Updated button text color */
+  background-color: #3b313f51;
+  color: white;
 }
 
-  .button:hover {
-    background-color: #2980b9; 
+.button-with-image {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  margin-left: 30vw;
+  justify-content: center;
+}
+
+.button-image {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+.button-divs{
+  margin-right: 20%;
+}
+
+
+.button:hover {
+  background-color: #2f8ac8d8;
+}
+
+.page-container {
+  text-align: center; /* Center-align the content horizontally */
+}
+
+.page-heading {
+  margin: 20px 0; /* Add vertical margin to center the heading vertically */
+}
+@media (max-width: 1000px) {
+  .container {
+    flex-direction: column; /* Set to column for small screens */
   }
 
+  .header {
+    font-size: 18px; /* Decrease font size for small screens */
+    margin-bottom: 10px;
+  }
+  .button-with-image {
+    max-width: 90%; /* Limit the maximum width of the buttons */
+    margin: 10px auto; /* Center the buttons horizontally */
+  }
+
+  .button-image {
+    width: 50px; /* Adjust the image size as needed */
+    height: 50px; /* Adjust the image size as needed */
+    margin-right: 10px; /* Adjust spacing between image and text */
+  }
+  .header{
+    order: -1; /* Move the buttons above the text on small screens */
+  }
+  .header .header-text{
+    margin-top: 50vh;
+    justify-self: center;
+    font-size: 250%;
+  }
+}

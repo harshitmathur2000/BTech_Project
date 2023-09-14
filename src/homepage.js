@@ -1,19 +1,52 @@
 import './App.css';
+import buyImage from './img/buy.jpg';
+import sellImage from './img/sell-out.png'
+import requestImage from './img/requestImage.png';
+import viewrequestImage from './img/viewrequest.png';
 import { Link } from 'react-router-dom';
+
 function HomePage() {
     return (
-        <body>
-            <div class="container">
-                <div class="button-container">
-                    <Link to="/buy" className="button">Buy</Link>
-                    <Link to="/sell" className="button">Sell</Link>
-                    <Link to="/request" className="button">Request</Link>
-                    <Link to="/view-request" className="button">View Request</Link>
+        <div className="container ">
+
+            <div className="header">
+                <h1 className="header-text" >Collegiate Exchange Hub</h1>
+            </div>
+            <div className="button-container">
+                <div className="button-divs">
+                    <Link to="/buy" className="button button-with-image">
+                        
+                        <img src={buyImage} alt="Buy" className="button-image"/> 
+                        Buy
+                        
+                    </Link>
+                </div>
+                <div className="button-divs">
+                <Link to="/sell" className="button button-with-image">
+                
+                <img src={sellImage} alt="sell" className="button-image"/>
+                    Sell
+                
+                </Link>
+                </div>
+                <div className="button-divs">
+                    <Link to="/request" className="button button-with-image">
+                    
+                    <img src={requestImage} alt="request" className="button-image"/>
+                        Request
+                    
+                    </Link>
+                </div>
+                <div className="button-divs">
+                    <Link to="/view-request" className="button button-with-image">
+                    
+                    <img src={viewrequestImage} alt="viewRequest" className="button-image"/>
+                        View Request
+                
+                    </Link>
                 </div>
             </div>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        </body>
-
+        </div>
     );
 }
 

@@ -37,8 +37,15 @@ code {
   justify-content: center;
 }
 
+.overlay{
+  z-index: 1000;
+  background-color: rgba(43, 226, 55, 0.392);
+  padding: 20px;
+  margin: 15px;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  height: 40vh;
+  width: 40vh;
 
-
-
-
+}
 

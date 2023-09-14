@@ -1,5 +1,7 @@
-import React from 'react';
+
 import BuyCard from './BuyCard';
+import React, { useState } from 'react';
+
 
 // const items = [
 //   {
@@ -16,19 +18,46 @@ import BuyCard from './BuyCard';
 // ];
 
 function BuyPage({ submissions }) {
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
   return (
     <div className="page-container">
-      <h2>Welcome to the Buy Page</h2>
+      <h2 className='page-heading'>Welcome to the Buy Page</h2>
       <div className="card-container">
         {submissions.map((item, index) => (
-          <BuyCard
-            key={index}
-            itemName={item.itemName}
-            itemPrice={item.itemPrice}
-            contactNumber={item.contactNumber}
-          />
+          !showOverlay && (
+            <div
+              key={index}
+              onClick={() => {
+                setSelectedItem(item);
+                setShowOverlay(!showOverlay);
+                console.log("call");
+              }}
+            >
+              <BuyCard
+                className="card"
+                itemName={item.itemName}
+                itemPrice={item.itemPrice}
+                contactNumber={item.contactNumber}
+              />
+            </div>
+          )
         ))}
       </div>
+
+      {showOverlay && selectedItem && (
+        <div className="overlay">
+          <div className="overlay-content">
+            <h3>{selectedItem.itemName}</h3>
+            <p>Price: {selectedItem.itemPrice}</p>
+            <p>Contact: {selectedItem.contactNumber}</p>
+            <p>Contact: {selectedItem.contactNumber}</p>
+            <p>Email Id: {selectedItem.email}</p>
+            <p>Item Details: {selectedItem.itemDetails}</p>
+            <button onClick={() => setShowOverlay(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
