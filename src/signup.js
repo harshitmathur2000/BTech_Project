@@ -3,8 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import InputControl from "./inputControl";
 import { useState, useEffect } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth,firestore } from "./firebaseConfig";
+import { auth, firestore } from "./firebaseConfig";
 import styles from "./Signup.module.css";
+import firebase from "firebase/compat/app";
 function Signup() {
   const navigate = useNavigate();
   const [values, setValues] = useState({
@@ -21,42 +22,62 @@ function Signup() {
       return;
     }
     setErrorMsg("");
-
-
     setSubmitButtonDisabled(true);
-    const userCredential = createUserWithEmailAndPassword(auth, values.email, values.pass)
-      .then(async (res) => {
-        firestore.collection('users').doc(res.user.uid).set({
-        email: res.user.email,
-        name: values.name,
-        });
-        setSubmitButtonDisabled(false);
-        const user = res.user;
-        await updateProfile(user, {
-          displayName: values.name,
-        });
-        navigate("/homePage");
-      })
-      .catch((err) => {
-        setSubmitButtonDisabled(false);
-        setErrorMsg(err.message);
-      });
-      // try {
-      //   // Create a new user with email and password          
-      //   // Access the newly created user
-      //   const user = userCredential.user;
-      //   console.log(userCredential);
-      //   firestore.collection('users').doc(user.uid).set({
-      //     email: user.email,
-      //     // Add more user details as needed
-      //   });
-      //   // Store additional user data in Firestor
+    if (values.email.endsWith("iitj.ac.in")) {
+      const userCredential = createUserWithEmailAndPassword(auth, values.email, values.pass)
+        .then(async (res) => {
+          const auth = firebase.auth();
+          const currUser = auth.currentUser;
 
-      //   // User signup success
-      //   console.log('User signed up successfully');
-      // } catch (error) {
-      //   console.error('Error signing up:', error.message);
-      // }
+          if (currUser) {
+            currUser.sendEmailVerification()
+              .then(() => {
+                alert("Verify your email")
+              })
+              .catch((error) => {
+                console.log(error)
+              });
+          }
+          firestore.collection('users').doc(res.user.uid).set({
+            email: res.user.email,
+            name: values.name,
+          });
+          setSubmitButtonDisabled(false);
+          const user = res.user;
+          await updateProfile(user, {
+            displayName: values.name,
+          });
+          navigate('/homePage')
+        })
+        .catch((err) => {
+          setSubmitButtonDisabled(false);
+          setErrorMsg(err.message);
+        });
+      
+
+    }
+    else {
+      // Display an error message or prevent registration
+      alert("Invalid email domain. Registration is allowed only for 'iitj.ac.in' addresses.");
+    }
+
+
+    // try {
+    //   // Create a new user with email and password          
+    //   // Access the newly created user
+    //   const user = userCredential.user;
+    //   console.log(userCredential);
+    //   firestore.collection('users').doc(user.uid).set({
+    //     email: user.email,
+    //     // Add more user details as needed
+    //   });
+    //   // Store additional user data in Firestor
+
+    //   // User signup success
+    //   console.log('User signed up successfully');
+    // } catch (error) {
+    //   console.error('Error signing up:', error.message);
+    // }
   };
 
   return (
