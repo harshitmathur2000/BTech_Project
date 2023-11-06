@@ -17,6 +17,14 @@ function HomePage(props) {
             </div>
             <div className="button-container">
                 <div className="button-divs">
+                    <Link to="/myItems" className="button button-with-image">
+
+                        <img src={buyImage} alt="Buy" className="button-image" />
+                        myItems
+
+                    </Link>
+                </div>
+                <div className="button-divs">
                     <Link to="/buy" className="button button-with-image">
 
                         <img src={buyImage} alt="Buy" className="button-image" />

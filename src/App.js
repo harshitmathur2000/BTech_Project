@@ -7,11 +7,10 @@ import SellPage from './SellPage';
 import RequestPage from './RequestPage'; 
 import ViewRequestPage from './ViewRequestPage'; 
 import Signup from './signup';
+import MyItemsPage from './myItems';
 import Login from './login';
 import { auth } from './firebaseConfig';
 function App() {
-  const [submissions, setSubmissions] = useState([]);
-  const [requests, setRequests] = useState([]);
   const [userName, setUserName] = useState(""); 
   useEffect(()=>{
     auth.onAuthStateChanged((user)=>{
@@ -23,6 +22,7 @@ function App() {
       }
     });
   },[])
+  console.log(userName)
   return (
     
     <Router>
@@ -36,10 +36,11 @@ function App() {
           </ul>
         </nav> */}
         <Routes>
-          <Route path="/buy" element={<BuyPage submissions={submissions}/>} />
-          <Route path="/sell" element={<SellPage setSubmissions={setSubmissions}/>} />
-          <Route path="/request" element={<RequestPage setRequests = {setRequests}/>} />
-          <Route path="/view-request" element={<ViewRequestPage requests = {requests}/>} />
+        <Route path="/buy" element={<BuyPage/>} />
+          <Route path="/sell" element={<SellPage/>} />
+          <Route path="/request" element={<RequestPage/>} />
+          <Route path="/view-request" element={<ViewRequestPage/>} />
+          <Route path="/myItems" element={<MyItemsPage/>} />
           <Route path = "/signup" element = {<Signup/>} />
           <Route path = "/" element = {<Login/>} />
           <Route path="/homePage" element={<HomePage />} />
