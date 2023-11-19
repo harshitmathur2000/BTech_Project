@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './SellPage.css';
 import { firestore, auth, firebase} from './firebaseConfig';
+import Navbar from './Navbar';
 
 function RequestPage() {
   const [itemTitle, setItemTitle] = useState('');
@@ -52,6 +53,7 @@ function RequestPage() {
 
   return (
     <div className="page-container">
+    <Navbar />
       <h2>Welcome to the Request Page</h2>
       <div className="form-container">
         <h3>Request For an Item</h3>

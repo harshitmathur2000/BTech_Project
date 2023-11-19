@@ -32,6 +32,49 @@ body {
   justify-self: center;
   font-size: 450%;
 }
+
+.navbar {
+  background-color: #000;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left:0;
+}
+.navbar a {
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.navbar a:first-child {
+  margin-right: auto; /* Push Home button to the left */
+}
+
+.navbar a:not(:first-child):not(:last-child) {
+  margin-left: 10px; /* Adjust the spacing between buttons */
+}
+
+.navbar a:last-child {
+  margin-left: 10px;
+  margin-right: 40px; /* Add some spacing to the right of the last button */
+}
+
+.navbar a.active {
+  color: #2f8ac8d8;
+  background-color: #fff;
+}
+
+.navbar a:hover {
+  background-color: #2f8ac8;
+}
+
 .button-container {
   display: flex;
   flex-direction: column;

@@ -4,6 +4,7 @@ import RequestCard from './RequestCard';
 // import 'firebase/firestore'; // Import Firestore
 import { firestore } from './firebaseConfig';
 // import './BuyPage.css'; // You can create a BuyPage.css file for styling if needed.
+import Navbar from './Navbar';
 
 function ViewRequestPage() {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -29,6 +30,7 @@ function ViewRequestPage() {
 
   return (
     <div className="page-container">
+    <Navbar />
       <h2 className="page-heading">Welcome to the Request Page</h2>
       <div className="card-container">
         {items.map((item, index) => (

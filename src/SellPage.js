@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import './SellPage.css';
 import { firebase, firestore, auth, storage } from './firebaseConfig'; // Update the imports
@@ -6,6 +8,7 @@ import {
   uploadBytes,
   getDownloadURL,
 } from "firebase/storage";
+import Navbar from './Navbar';
 
 function SellPage() {
   const [itemTitle, setItemTitle] = useState('');
@@ -92,6 +95,7 @@ function SellPage() {
 
   return (
     <div className="page-container">
+    <Navbar />
       <h2>Welcome to the Sell Page</h2>
       <div className="form-container">
         <h3>Sell Your Item</h3>

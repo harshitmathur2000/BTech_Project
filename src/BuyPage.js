@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BuyCard from './BuyCard';
 import { firestore } from './firebaseConfig';
+import Navbar from './Navbar';
 
 function BuyPage() {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -38,6 +39,7 @@ function BuyPage() {
 
   return (
     <div className="page-container">
+    <Navbar />
       <h2 className="page-heading">Welcome to the Buy Page</h2>
       <div className="category-buttons">
         <button onClick={() => filterItemsByCategory('Furniture')}>Furniture</button>
