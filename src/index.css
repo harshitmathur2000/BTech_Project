@@ -37,6 +37,12 @@ code {
   justify-content: center;
 }
 
+.card-img-top{
+  width: 20vh; /* Set your desired width */
+  height: 20vh; /* Set your desired height */
+  object-fit: cover;
+}
+
 .overlay{
   z-index: 1000;
   background-color: rgba(43, 226, 55, 0.392);

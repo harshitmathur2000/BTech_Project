@@ -114,6 +114,7 @@ function MyItemsPage() {
                 itemPrice={item.productPrice}
                 contactNumber={item.contactNumber}
                 category={item.category}
+                image={item.imageURL}
               />
               <button onClick={() => handleSoldClick(item.id, item.category)  }>Sold</button>
             </div>

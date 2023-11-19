@@ -72,7 +72,7 @@ function BuyPage() {
       {showOverlay && selectedItem && (
         <div className="overlay">
           <div className="overlay-content">
-            <img src={selectedItem.image} alt={selectedItem.itemName} className="card-img-top" />
+            <img src={selectedItem.imageURL} alt={selectedItem.itemName} className="card-img-top" />
             <h3>{selectedItem.productPrice}</h3>
             <p>Price: {selectedItem.productPrice}</p>
             <p>Contact: {selectedItem.contactNumber}</p>
