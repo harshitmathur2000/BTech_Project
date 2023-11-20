@@ -9,8 +9,8 @@ const Navbar = () => {
     { name: 'MyItems', path: '/myItems' },
     { name: 'Buy', path: '/buy' },
     { name: 'Sell', path: '/sell' },
-    { name: 'Request', path: '/request' },
-    { name: 'ViewRequest', path: '/view-request' },
+    { name: 'Rent', path: '/request' },
+    { name: 'View Rented Items', path: '/view-request' },
   ];
 
   return (

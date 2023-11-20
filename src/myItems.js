@@ -118,8 +118,9 @@ function MyItemsPage() {
   }, []);
 
   return (
-    <div className="page-container">
+    <div className='page-container'>
       <Navbar />
+      <div className="page-content">
       <h2 className="page-heading">My Items</h2>
       <div className="card-container">
         {isLoading ? (
@@ -148,10 +149,12 @@ function MyItemsPage() {
                 />
               )}
               <button onClick={() => handleSoldClick(item.id, item.category, item.type)}>Sold</button>
-              <div>{item.type === 'itemsToSell' ? 'For Sale' : 'Requested'}</div>
+              <div>{item.type === 'itemsToSell' ? 'For Sale' : 'For Rent'}</div>
             </div>
           ))
         )}
+      </div>
+
       </div>
     </div>
   );

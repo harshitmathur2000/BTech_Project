@@ -32,9 +32,13 @@ code {
 }
 
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }
 
 .card-img-top{
@@ -52,6 +56,14 @@ code {
   border-radius: 30px;
   height: 40vh;
   width: 40vh;
+  margin:auto;
 
 }
 
+.category-buttons{
+  margin-bottom: 30px;
+}
+
+.page-content {
+  margin-top: 10vh;
+}

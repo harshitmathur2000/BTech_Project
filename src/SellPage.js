@@ -21,7 +21,7 @@ function SellPage() {
   const [isUploading, setUploading] = useState(false);
   const [progress, setProgress] = useState(0);
 
-  console.log(storage)
+
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -37,6 +37,8 @@ function SellPage() {
         });
       });
     }
+
+    return;
   };
 
   const handleSubmit = async (e) => {
@@ -50,8 +52,6 @@ function SellPage() {
     }
 
     try {
-      // Handle the image upload
-      handleUpload();
 
       // Add a new document with the form data to the "itemsToSell" collection
       const customItemId = `${user.uid}_${Date.now()}`;
@@ -166,6 +166,7 @@ function SellPage() {
           </label>
           {isUploading && <p>Uploading... {progress}%</p>}
           <button type="submit">Submit</button>
+          <button type="submit" onClick={handleUpload}>ImageUpload</button>
         </form>
       </div>
     </div>

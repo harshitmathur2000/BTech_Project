@@ -44,7 +44,7 @@ function HomePage(props) {
                     <Link to="/request" className="button button-with-image">
 
                         <img src={requestImage} alt="request" className="button-image" />
-                        Request
+                        Rent
 
                     </Link>
                 </div>
@@ -52,7 +52,7 @@ function HomePage(props) {
                     <Link to="/view-request" className="button button-with-image">
 
                         <img src={viewrequestImage} alt="viewRequest" className="button-image" />
-                        View Request
+                        View Rented Items
 
                     </Link>
                 </div>

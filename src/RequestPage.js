@@ -54,9 +54,9 @@ function RequestPage() {
   return (
     <div className="page-container">
     <Navbar />
-      <h2>Welcome to the Request Page</h2>
+      <h2>Welcome to the Rent Page</h2>
       <div className="form-container">
-        <h3>Request For an Item</h3>
+        <h3>Request to Rent an Item</h3>
         <form onSubmit={handleSubmit} className="sell-form">
           <label>
             Item Title:

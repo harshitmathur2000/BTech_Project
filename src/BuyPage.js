@@ -40,6 +40,7 @@ function BuyPage() {
   return (
     <div className="page-container">
     <Navbar />
+    <div className='page-content'>
       <h2 className="page-heading">Welcome to the Buy Page</h2>
       <div className="category-buttons">
         <button onClick={() => filterItemsByCategory('Furniture')}>Furniture</button>
@@ -70,6 +71,7 @@ function BuyPage() {
           )
         ))}
       </div>
+    </div>
 
       {showOverlay && selectedItem && (
         <div className="overlay">

@@ -31,7 +31,9 @@ function ViewRequestPage() {
   return (
     <div className="page-container">
     <Navbar />
-      <h2 className="page-heading">Welcome to the Request Page</h2>
+    <div className='page-content'>
+
+      <h2 className="page-heading">Welcome to the Rental Page</h2>
       <div className="card-container">
         {items.map((item, index) => (
           !showOverlay && (
@@ -52,6 +54,7 @@ function ViewRequestPage() {
           )
         ))}
       </div>
+    </div>
 
       {showOverlay && selectedItem && (
         <div className="overlay">
