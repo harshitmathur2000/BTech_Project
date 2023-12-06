@@ -9,6 +9,7 @@ import ViewRequestPage from './ViewRequestPage';
 import Signup from './signup';
 import MyItemsPage from './myItems';
 import Login from './login';
+import FeedbackPage from './feedback';
 import { auth } from './firebaseConfig';
 function App() {
   const [userName, setUserName] = useState(""); 
@@ -44,6 +45,7 @@ function App() {
           <Route path = "/signup" element = {<Signup/>} />
           <Route path = "/" element = {<Login/>} />
           <Route path="/homePage" element={<HomePage />} />
+          <Route path="/feedback" element={<FeedbackPage />} />
         </Routes>
       </div>
     </Router>

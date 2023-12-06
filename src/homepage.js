@@ -56,6 +56,14 @@ function HomePage(props) {
 
                     </Link>
                 </div>
+                <div className="button-divs">
+                    <Link to="/feedback" className="button button-with-image">
+
+                        <img src={viewrequestImage} alt="feedback" className="button-image" />
+                        Feedback
+
+                    </Link>
+                </div>
             </div>
             <div>
             </div>

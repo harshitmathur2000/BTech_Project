@@ -64,6 +64,14 @@ function ViewRequestPage() {
             <p>Contact: {selectedItem.contactNumber}</p>
             <p>Email Id: {selectedItem.emailAddress}</p>
             <p>Item Details: {selectedItem.itemDetails}</p>
+            <button onClick={() => {
+              const message = `Hello I am interested in ${selectedItem.productTitle} that you have listed on Collegite Exhange Hub.`;
+              const url = `https://wa.me/${selectedItem.contactNumber}?text=${encodeURIComponent(message)}`;
+              window.open(url, '_blank');
+              setShowOverlay(false);
+            }}>
+              Send WhatsApp Message
+            </button>
             <button onClick={() => setShowOverlay(false)}>Close</button>
           </div>
         </div>

@@ -12,6 +12,7 @@ function MyItemsPage() {
     try {
       // Ensure the user is logged in
       const currentUser = auth.currentUser;
+      console.log(currentUser)
       if (!currentUser) {
         console.error('No logged-in user.');
         return;
@@ -148,7 +149,9 @@ function MyItemsPage() {
                   category={item.category}
                 />
               )}
-              <button onClick={() => handleSoldClick(item.id, item.category, item.type)}>Sold</button>
+              <button onClick={() => handleSoldClick(item.id, item.category, item.type)}>
+                  {item.type === 'itemsToSell' ? 'Sold' : 'Returned'}
+                </button>
               <div>{item.type === 'itemsToSell' ? 'For Sale' : 'For Rent'}</div>
             </div>
           ))

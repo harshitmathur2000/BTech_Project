@@ -22,7 +22,8 @@ function SellPage() {
   const [progress, setProgress] = useState(0);
 
 
-
+  const user = auth.currentUser;
+  console.log(user)
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setImage(file);
@@ -60,7 +61,7 @@ function SellPage() {
         productTitle: itemTitle,
         productPrice: itemPrice,
         contactNumber: contactNumber,
-        emailAddress: email,
+        emailAddress: user.email,
         itemDetails: itemDetails,
         category: category, // Include the selected category
         userId: user.uid,
@@ -127,7 +128,7 @@ function SellPage() {
               required
             />
           </label>
-          <label>
+          {/* <label>
             Email:
             <input
               type="email"
@@ -135,7 +136,7 @@ function SellPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-          </label>
+          </label> */}
           <label>
             Item Details:
             <textarea
