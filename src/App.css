@@ -5,13 +5,12 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-  background: linear-gradient(0deg, #a883f9, #71f8f8);
+  background: whitesmoke;
 
 }
 
 .container {
-  display: flex;
-  flex-direction: row; /* Set the direction to row to have text on the left and buttons on the right */
+  display: flex;/* Set the direction to row to have text on the left and buttons on the right */
   align-items: center;
   justify-content: space-between; /* Distribute space between text and buttons */
   width: 100%; /* Adjust the container width as needed */
@@ -19,11 +18,10 @@ body {
 
 .header {
   font-size: 30px;
-  color: rgba(255, 255, 255, 0.967); /* Adjust the font size for the header text */
+  color: rgba(35, 41, 55, 0.967); /* Adjust the font size for the header text */
   height: 100vh;
   width: 100%; 
-  justify-content: center;/* Add margin to separate it from buttons */
-  background-image: url('./img/bgimage.jpg'); /* Replace with the correct path to your image */
+  justify-content: center;/* Add margin to separate it from buttons */ /* Replace with the correct path to your image */
   background-size: cover; /* Adjust background size as needed */
   background-position: center;
   text-align: center;
@@ -35,7 +33,7 @@ body {
 }
 
 .navbar {
-  background-color: #000;
+  background-color:  rgba(35, 41, 55, 0.967);;
   display: flex;
   justify-content: space-around;
   padding: 10px;
@@ -45,7 +43,7 @@ body {
   left:0;
 }
 .navbar a {
-  color: #000;
+  color:  rgba(35, 41, 55, 0.967);
   text-decoration: none;
   font-size: 18px;
   transition: color 0.3s, background-color 0.3s;

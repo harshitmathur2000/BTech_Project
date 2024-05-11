@@ -1,0 +1,100 @@
+.profile-container {
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .profile-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-info {
+    margin-bottom: 20px;
+  }
+  
+  .report-btn {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .report-form {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .report-form label {
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .report-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .report-form button {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .section-heading {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .card-container {
+    display: flex;
+    height: fit-content;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+    overflow-x: scroll; /* Add horizontal scrollbar */
+    gap: 20px;
+    margin-left: auto; /* Start from right corner */ /* Add margin to the right */
+  }
+  
+  .card {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    min-width: 250px; /* Minimum width of each card */
+    max-width: 300px; /* Maximum width of each card */
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .review-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .review-list li {
+    margin-bottom: 10px;
+  }
+  
+  .review-form {
+    margin-top: 20px;
+    width: 50vw;
+  }
+  
+  .review-form input {
+    width: calc(100% - 100px);
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  .review-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
