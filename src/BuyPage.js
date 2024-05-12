@@ -135,7 +135,6 @@ function BuyPage() {
             <p>Contact: {selectedItem.contactNumber}</p>
             <p>Email Id: {selectedItem.emailAddress}</p>
             <p>Item Details: {selectedItem.itemDetails}</p>
-            <p><a href='http://localhost:3002'>Chat with owner</a></p>
             <button onClick={() => setShowOverlay(false)}>Close</button>
           </div>
         </div>
